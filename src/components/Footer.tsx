@@ -1,4 +1,5 @@
-import { Flame, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { Flame } from "lucide-react";
 
 export function Footer() {
   return (
@@ -6,11 +7,14 @@ export function Footer() {
       <div className="relative overflow-hidden bg-white border border-black/10 rounded-3xl">
         <div className="relative z-10 p-8 sm:p-12 md:p-16">
           <div className="pb-12 border-b border-black/10">
-            <div className="flex items-center gap-2 mb-4">
-              <ShieldCheck className="w-5 h-5 text-black/80" />
-              <h3 className="text-2xl text-black tracking-tighter font-medium">
-                ZeroTrace — burn-on-read secrets
-              </h3>
+            <div className="mb-4">
+              <Image
+                src="/zerotrace-logo.png"
+                alt="ZeroTrace"
+                width={180}
+                height={98}
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-black/70 max-w-3xl">
               Share API keys, passwords, and tokens without leaving them in Slack

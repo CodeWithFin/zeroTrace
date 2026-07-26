@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "ZeroTrace — Burn-on-read secrets",
   description:
     "Share sensitive text with single-use, self-destructing links. Encrypted in memory. Burned on read.",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }, { url: "/favicon.ico" }],
+    apple: [{ url: "/apple-icon.png" }],
+  },
 };
 
 export default function RootLayout({
