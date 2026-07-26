@@ -20,12 +20,10 @@ export function ScrollHighlightText({
     if (!el) return;
 
     const update = () => {
-      const rect = el.getBoundingClientRect();
       const viewport = window.innerHeight || 1;
-      // Start highlighting as the line enters the middle band of the viewport
-      const start = viewport * 0.72;
-      const end = viewport * 0.28;
-      const raw = (start - rect.top) / (start - end);
+      // Hero line starts muted; scroll down to light words in sequence
+      const distance = Math.max(220, viewport * 0.4);
+      const raw = window.scrollY / distance;
       setProgress(Math.min(1, Math.max(0, raw)));
     };
 
@@ -43,13 +41,14 @@ export function ScrollHighlightText({
       {words.map((word, index) => {
         const wordStart = index / words.length;
         const wordEnd = (index + 1) / words.length;
-        const local = (progress - wordStart) / (wordEnd - wordStart);
-        const opacity = 0.28 + Math.min(1, Math.max(0, local)) * 0.72;
+        const local =
+          (progress - wordStart) / Math.max(0.0001, wordEnd - wordStart);
+        const t = Math.min(1, Math.max(0, local));
+        const opacity = 0.28 + t * 0.72;
 
         return (
           <span
             key={`${word}-${index}`}
-            className="transition-colors duration-150"
             style={{ color: `rgba(0, 0, 0, ${opacity})` }}
           >
             {word}
