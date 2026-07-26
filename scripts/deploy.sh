@@ -24,3 +24,7 @@ curl -fsS "http://127.0.0.1:3020" >/dev/null && echo "ZeroTrace is up on :3020" 
   echo "Warning: health check failed — check logs with: docker compose -f $COMPOSE_FILE logs --tail=50"
   exit 1
 }
+
+if curl -fsSk "https://zerotrace.petriko.me" >/dev/null 2>&1; then
+  echo "ZeroTrace is up at https://zerotrace.petriko.me"
+fi

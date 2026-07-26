@@ -2,14 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  AlertTriangle,
-  Check,
-  Copy,
-  Eye,
-  Flame,
-  LoaderCircle,
-} from "lucide-react";
+import { Check, Copy, Eye, LoaderCircle } from "lucide-react";
 
 type ViewState =
   | { status: "confirm" }
@@ -70,10 +63,6 @@ export function SecretViewer({ id }: { id: string }) {
     <div className="rounded-3xl overflow-hidden backdrop-blur-md bg-white/70 border border-white/20 p-6 sm:p-8 shadow-xl shadow-black/5">
       {state.status === "confirm" ? (
         <>
-          <div className="inline-flex items-center gap-2 rounded-full bg-amber-500/10 text-amber-800 ring-1 ring-amber-500/20 px-2.5 py-1 text-xs mb-4">
-            <AlertTriangle className="h-3.5 w-3.5" />
-            One-time view
-          </div>
           <h1 className="text-3xl sm:text-4xl font-medium tracking-tighter text-black mb-3">
             Reveal this secret?
           </h1>
@@ -101,10 +90,6 @@ export function SecretViewer({ id }: { id: string }) {
 
       {state.status === "ready" ? (
         <>
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 text-emerald-700 ring-1 ring-emerald-500/20 px-2.5 py-1 text-xs mb-4">
-            <Flame className="h-3.5 w-3.5" />
-            Burned — this record no longer exists
-          </div>
           <h1 className="text-3xl sm:text-4xl font-medium tracking-tighter text-black mb-3">
             Secret revealed
           </h1>
@@ -136,10 +121,6 @@ export function SecretViewer({ id }: { id: string }) {
 
       {state.status === "gone" || state.status === "error" ? (
         <>
-          <div className="inline-flex items-center gap-2 rounded-full bg-red-500/10 text-red-700 ring-1 ring-red-500/20 px-2.5 py-1 text-xs mb-4">
-            <AlertTriangle className="h-3.5 w-3.5" />
-            {state.status === "gone" ? "Already burned" : "Error"}
-          </div>
           <h1 className="text-3xl sm:text-4xl font-medium tracking-tighter text-black mb-3">
             {state.status === "gone" ? "Nothing left to show" : "Something failed"}
           </h1>

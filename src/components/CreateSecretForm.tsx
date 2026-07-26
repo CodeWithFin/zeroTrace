@@ -61,10 +61,6 @@ export function CreateSecretForm() {
   if (url) {
     return (
       <div className="rounded-3xl overflow-hidden backdrop-blur-md bg-white/70 border border-white/20 p-6 sm:p-8 shadow-xl shadow-black/5">
-        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 text-emerald-700 ring-1 ring-emerald-500/20 px-2.5 py-1 text-xs mb-4">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          Link ready — burns after one view
-        </div>
         <h2 className="text-2xl sm:text-3xl font-medium tracking-tighter text-black mb-2">
           Your secret link
         </h2>

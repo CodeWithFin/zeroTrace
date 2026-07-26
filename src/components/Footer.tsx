@@ -1,4 +1,5 @@
-import { Flame, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { Flame } from "lucide-react";
 
 export function Footer() {
   return (
@@ -6,11 +7,14 @@ export function Footer() {
       <div className="relative overflow-hidden bg-white border border-black/10 rounded-3xl">
         <div className="relative z-10 p-8 sm:p-12 md:p-16">
           <div className="pb-12 border-b border-black/10">
-            <div className="flex items-center gap-2 mb-4">
-              <ShieldCheck className="w-5 h-5 text-black/80" />
-              <h3 className="text-2xl text-black tracking-tighter font-medium">
-                ZeroTrace — burn-on-read secrets
-              </h3>
+            <div className="mb-4">
+              <Image
+                src="/zerotrace-logo.png"
+                alt="ZeroTrace"
+                width={180}
+                height={98}
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-black/70 max-w-3xl">
               Share API keys, passwords, and tokens without leaving them in Slack
@@ -18,10 +22,6 @@ export function Footer() {
             </p>
 
             <div className="mt-6 rounded-2xl border border-black/10 bg-gradient-to-b from-neutral-700 to-neutral-900 p-5 sm:p-6 md:p-8 shadow-[0_2.8px_2.2px_rgba(0,0,0,0.034),0_6.7px_5.3px_rgba(0,0,0,0.048),0_12.5px_10px_rgba(0,0,0,0.06),0_22.3px_17.9px_rgba(0,0,0,0.072),0_41.8px_33.4px_rgba(0,0,0,0.086),0_100px_80px_rgba(0,0,0,0.12)]">
-              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 text-emerald-400 ring-1 ring-emerald-500/20 px-2.5 py-1 text-xs mb-4">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Zero knowledge by design
-              </div>
               <h4 className="text-white font-semibold tracking-tight mb-3">
                 Built for teams that share secrets carefully
               </h4>

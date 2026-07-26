@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Flame } from "lucide-react";
 
 export function Header() {
   return (
@@ -8,10 +8,17 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm sm:text-base font-medium tracking-tight text-black"
+            className="inline-flex items-center shrink-0"
+            aria-label="ZeroTrace home"
           >
-            <Flame className="h-4 w-4" strokeWidth={2} />
-            ZeroTrace
+            <Image
+              src="/zerotrace-logo.png"
+              alt="ZeroTrace"
+              width={160}
+              height={87}
+              className="h-9 w-auto sm:h-10"
+              priority
+            />
           </Link>
           <nav className="hidden md:flex items-center gap-8">
             <a

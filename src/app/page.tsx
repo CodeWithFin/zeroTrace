@@ -1,6 +1,7 @@
 import { CreateSecretForm } from "@/components/CreateSecretForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ScrollHighlightText } from "@/components/ScrollHighlightText";
 import { EyeOff, Lock, Trash2 } from "lucide-react";
 
 const steps = [
@@ -39,9 +40,10 @@ export default function Home() {
           <div className="pt-14 pb-10 sm:py-20 lg:py-24">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-[1.05] text-black tracking-tighter font-medium max-w-5xl">
               Share secrets that vanish
-              <span className="block text-black/40 tracking-tighter font-medium">
-                after a single read — encrypted, disposable, and account-free
-              </span>
+              <ScrollHighlightText
+                className="block tracking-tighter font-medium"
+                text="after a single read — encrypted, disposable, and account-free"
+              />
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-black/60 max-w-2xl leading-relaxed tracking-tight">
               Stop pasting API keys into Slack forever. ZeroTrace creates
