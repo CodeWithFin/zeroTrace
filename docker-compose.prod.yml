@@ -23,13 +23,21 @@ services:
     environment:
       DATABASE_URL: postgresql://zerotrace:zerotrace@db:5432/zerotrace
       ENCRYPTION_KEY: ${ENCRYPTION_KEY}
-      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-http://102.207.151.58:3020}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-https://zerotrace.petriko.me}
       CRON_SECRET: ${CRON_SECRET:-}
       PORT: "3000"
       HOSTNAME: "0.0.0.0"
+    networks:
+      - default
+      - mkash-proxy
     depends_on:
       db:
         condition: service_healthy
 
 volumes:
   zerotrace_pg:
+
+networks:
+  mkash-proxy:
+    external: true
+    name: mkash-proxy
