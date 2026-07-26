@@ -13,7 +13,7 @@ git checkout "$BRANCH"
 git reset --hard "origin/$BRANCH"
 
 echo "==> Building and restarting containers"
-docker compose -f "$COMPOSE_FILE" up -d --build --remove-orphans
+docker compose --env-file .env -f "$COMPOSE_FILE" up -d --build --remove-orphans
 
 echo "==> Pruning unused images (safe)"
 docker image prune -f >/dev/null 2>&1 || true
